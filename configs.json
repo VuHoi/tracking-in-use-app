@@ -1,18 +1,19 @@
 {
   "linux": {
-    "bin"    :"sh",
-    "parameters" : [],
-    "script_url" : "scripts/linux.sh"
+    "bin": "sh",
+    "parameters": [],
+    "script_url": "scripts/linux.sh"
   },
-  "mac" :{
-    "bin"    : "sh",
-    "parameters" : [],
-    "script_url" : "scripts/mac.sh",
-    "subscript_url":"scripts/mac.scpt"
+  "mac": {
+    "bin": "sh",
+    "parameters": [],
+    "script_url": "scripts/mac.sh",
+    "subscript_url": "scripts/mac.scpt",
+    "url_shell": "scripts/mac.urls.sh"
   },
-  "win32":{
-    "bin"    :"powershell",
-    "parameters" : ["-ExecutionPolicy", "Bypass","-File"],
-    "script_url" : "scripts\\windows.ps1"
+  "win32": {
+    "bin": "powershell",
+    "parameters": ["-ExecutionPolicy", "Bypass", "-File"],
+    "script_url": "scripts\\windows.ps1"
   }
 }

@@ -1,33 +1,62 @@
-tell application "Safari"
-    -- Initialize
-    set tabNames to {}
-    set tabURLs to {}
-    set frontName to name of front document
-    
-    -- Collect the tab names and URLs from the top Safari window
-    set topWindow to window 1
-    set topTabs to every tab of topWindow
-    repeat with t in topTabs
-      set end of tabNames to name of t
-      set end of tabURLs to URL of t
-    end repeat
-  end tell
+
+
+
+
+
+
+on run arguments
+
+set urls to {}
+tell application "System Events"
+repeat with anItem in arguments
+
+	set myApp to anItem as text
+
+	if myApp is "GoogleChrome" then
+		tell application "Google Chrome" 
+                 set the_url to the URL of active tab of front window
+                 set urls to urls & the_url
+                  end tell
+	else if myApp is "Opera" then
+		tell application "Opera" 
+                set the_url to the URL of front document
+                  set urls to urls & the_url
+                end tell
+	
+        else if myApp is "BraveBrowser" then
+                tell application "Brave Browser"
+               set the_url to the URL of active tab of front window
+                set urls to urls & the_url
+                end tell
+        -- else if myApp is "Microsoft Edge" then
+        --         tell application "Microsoft Edge" to return URL of active tab of front window
+ 
+        -- else if myApp is "Webkit" then
+        --          tell application "Webkit" to return URL of active tab of front window
+
+        else if myApp is "Safari" then
+		tell application "Safari" 
+                set the_url to the URL of front document
+              set urls to urls & the_url
+                end tell
+	else if myApp is "Firefox" then
+		tell application "Firefox" to activate
+tell application "System Events"
+    keystroke "l" using command down
+    keystroke "c" using command down
+end tell
+ set the_url to the clipboard as text
+ set urls to urls & the_url
+               
+
+	else
+		return
+	end if
+          end repeat
+end tell
+return {urls}
+end run
+
+
   
-  -- Display a list of names for the user to choose from
-  tell application "System Events"
-    set activeApp to name of first application process whose frontmost is true
-    activate
-    choose from list tabNames with title "Safari Tabs" default items frontName
-    if result is not false then
-      set nameChoice to item 1 of result
-    else
-      return
-    end if
-  end tell
-  
-  -- Return the URL of the selected tab
-  tell application activeApp to activate
-  repeat with t from 1 to the count of tabNames
-    if item t of tabNames is nameChoice then return item t of tabURLs
-  end repeat
   

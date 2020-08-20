@@ -1,50 +1,20 @@
 {
-  "_from": "active-window@^0.1.0",
-  "_id": "active-window@0.1.0",
-  "_inBundle": false,
-  "_integrity": "sha1-G5hrlQKT6wV3+4OWb0TbYt4adZM=",
-  "_location": "/active-window",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "active-window@^0.1.0",
-    "name": "active-window",
-    "escapedName": "active-window",
-    "rawSpec": "^0.1.0",
-    "saveSpec": null,
-    "fetchSpec": "^0.1.0"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/active-window/-/active-window-0.1.0.tgz",
-  "_shasum": "1b986b950293eb0577fb83966f44db62de1a7593",
-  "_spec": "active-window@^0.1.0",
-  "_where": "/Users/vuhoi/Desktop/test",
+
+
   "bundleDependencies": false,
   "contributors": [
     {
-      "name": "Jason Stallings",
-      "email": "jason@stallin.gs"
-    },
-    {
-      "name": "Robson Vieira",
-      "email": "robsonvnasc@gmail.com"
+      "name": "Vu Khac Hoi",
+      "email": "taikhoan759501@gmail.com"
     }
+    
   ],
-  "scripts": {
-    "start": "electron ."
-  },
-  "dependencies": {
-    "electron": "^9.2.0",
-    "robotjs": "^0.6.0"
-  },
+ "scripts": {"start": "electron ."},
   "deprecated": false,
-  "description": "Get active window title.",
+  "description": "tracking-app-in-use",
   "license": "MIT",
-  "main": "main.js",
-  "name": "active-window",
-  "version": "0.1.0"
+  "main": "index.js",
+  "name": "tracking-app-in-use",
+  "version": "1.0.6",
+  "keywords": ["Electron","child-process","Nodejs"]
 }

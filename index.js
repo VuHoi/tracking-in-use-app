@@ -21,6 +21,7 @@ exports.getActiveWindow = function (
   parameters = config.parameters;
   // parameters.push(repeats);
   // parameters.push(interval);
+  if(options)
   for (let i = 0; i < options.length; i++) {
     parameters.push(options[i]);
   }
@@ -120,7 +121,7 @@ function getConfig(type) {
   //Append directory to script url
   if (type === "app") {
     script_url = path.join(__dirname, config.script_url);
-    config.parameters.push(script_url);
+    config.parameters.push(script_url)
   }
 
   //Append directory to subscript url on OSX
